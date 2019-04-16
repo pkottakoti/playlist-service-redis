@@ -15,7 +15,7 @@ public class Song {
 
 	public Song() {	}
 	
-	public Song(int id, String title, String artist, Duration length) {
+	public Song(String title, String artist, Duration length) {
 		super();
 		this.id = id;
 		this.title = title;
