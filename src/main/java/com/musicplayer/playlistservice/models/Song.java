@@ -1,10 +1,14 @@
 package com.musicplayer.playlistservice.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
+
 import java.time.Duration;
 
-
+@RedisHash("song")
 public class Song {
 
+	@Id
 	private Integer id;
 
 	private String title;
@@ -15,7 +19,7 @@ public class Song {
 
 	public Song() {	}
 	
-	public Song(String title, String artist, Duration length) {
+	public Song(Integer id, String title, String artist, Duration length) {
 		super();
 		this.id = id;
 		this.title = title;
