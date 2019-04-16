@@ -53,9 +53,9 @@ public class Song {
 	}
 
 	public String getDurationPretty() {
-		long s  = length.toMillis()/1000 % 60;
-		long min = length.toMinutes() / 1;
-		long h = length.toHours() / 1 ;
+		long h  = length.getSeconds()/3600;
+		long min = length.getSeconds()/60;
+		long s = length.getSeconds()-(h*3600)-(min*60);
 		return String.format("%d:%02d:%02d", h, min, s);
 	}
 
